@@ -111,7 +111,6 @@ class Game:
         self.player2 = player2
         self.board = board
         self.rounds = rounds
-        self.scoreboard = f'{player1.getName()} {player1.getScore()} - {player2.getScore()} {player2.getName()}'
 
     def start(self):
         for i in range(self.rounds):
@@ -150,45 +149,50 @@ class Game:
                         position = input('Posição: ')
                 if checker_board_count >= 5:
                     if self.board.checkLine(position, char_checker):
-                        winner = (
-                            self.player1.name,
+                        if current == 1:
+                            winner = self.player1.getName()
                             self.player1.setScore()
-                            if current == 1
-                            else self.player2.name,
-                            self.player2.setScore,
-                        )
+                        else:
+                            winner = self.player2.getName()
+                            self.player2.setScore()
                         print(f'{winner} ganhou!\n')
-                        print(self.scoreboard)
+                        print(
+                            f'{player1.getName()} {player1.getScore()} - {player2.getScore()} {player2.getName()}'
+                        )
                         self.board.resetBoard()
                         break
                     elif self.board.checkColumn(position, char_checker):
-                        winner = (
-                            self.player1.name,
+                        if current == 1:
+                            winner = self.player1.getName()
                             self.player1.setScore()
-                            if current == 1
-                            else self.player2.name,
-                            self.player2.setScore,
-                        )
+                        else:
+                            winner = self.player2.getName()
+                            self.player2.setScore()
                         print(f'{winner} ganhou!\n')
-                        print(self.scoreboard)
+                        print(
+                            f'{player1.getName()} {player1.getScore()} - {player2.getScore()} {player2.getName()}'
+                        )
                         self.board.resetBoard()
                         break
                     elif self.board.checkDiagonal(char_checker):
-                        winner = (
-                            self.player1.name,
+                        if current == 1:
+                            winner = self.player1.getName()
                             self.player1.setScore()
-                            if current == 1
-                            else self.player2.name,
-                            self.player2.setScore,
-                        )
+                        else:
+                            winner = self.player2.getName()
+                            self.player2.setScore()
                         print(f'{winner} ganhou!\n')
-                        print(self.scoreboard)
+                        print(
+                            f'{player1.getName()} {player1.getScore()} - {player2.getScore()} {player2.getName()}'
+                        )
                         self.board.resetBoard()
                         break
                     elif checker_board_count == 9:
                         self.board.resetBoard()
                         print('Empate: Deu velha!\n')
-                        print(self.scoreboard)
+                        print(
+                            f'{player1.getName()} {player1.getScore()} - {player2.getScore()} {player2.getName()}'
+                        )
 
                 current = 2 if current == 1 else 1
                 checker_board_count += 1
