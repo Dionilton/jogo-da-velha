@@ -155,7 +155,7 @@ class Game:
                         else:
                             winner = self.player2.getName()
                             self.player2.setScore()
-                        print(f'{winner} ganhou!\n')
+                        print(f'{winner} ganhou!')
                         print(
                             f'{player1.getName()} {player1.getScore()} - {player2.getScore()} {player2.getName()}'
                         )
@@ -168,7 +168,7 @@ class Game:
                         else:
                             winner = self.player2.getName()
                             self.player2.setScore()
-                        print(f'{winner} ganhou!\n')
+                        print(f'{winner} ganhou!')
                         print(
                             f'{player1.getName()} {player1.getScore()} - {player2.getScore()} {player2.getName()}'
                         )
@@ -181,7 +181,7 @@ class Game:
                         else:
                             winner = self.player2.getName()
                             self.player2.setScore()
-                        print(f'{winner} ganhou!\n')
+                        print(f'{winner} ganhou!')
                         print(
                             f'{player1.getName()} {player1.getScore()} - {player2.getScore()} {player2.getName()}'
                         )
@@ -189,9 +189,9 @@ class Game:
                         break
                     elif checker_board_count == 9:
                         self.board.resetBoard()
-                        print('Empate: Deu velha!\n')
+                        print('Empate: Deu velha!')
                         print(
-                            f'{player1.getName()} {player1.getScore()} - {player2.getScore()} {player2.getName()}'
+                            f'{player1.getName()} {player1.getScore()} - {player2.getScore()} {player2.getName()}\n'
                         )
 
                 current = 2 if current == 1 else 1
